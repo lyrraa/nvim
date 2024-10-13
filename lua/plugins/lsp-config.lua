@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls" }
+        ensure_installed = { "lua_ls", "gopls" }
       })
     end
   },
@@ -23,6 +23,10 @@ return {
 
       -- add lsp for languages
       lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+
+      lspconfig.gopls.setup({
         capabilities = capabilities
       })
 
